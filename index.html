@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Name 'Em</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/heroic-features.css" rel="stylesheet">
+
+</head>
+
+<body style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+
+  <!-- Navigation -->
+  <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="display: none" >
+    <div class="container">
+      <a class="navbar-brand" href="#">Name 'Em!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a id="leaderboard-button" class="nav-link" href="#">Leaderboard
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="edit-user-info" class="nav-link" href="#">Edit User</a>
+          </li>
+          <li class="nav-item">
+            <a id="pick-game-button" class="nav-link" href="#">Games</a>
+          </li>
+          <li class="nav-item">
+            <a id="user-archive-button" class="nav-link" href="#">Previous Scores</a>
+          </li>
+          <li class="nav-item">
+            <a id="logout-button" class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <br>
+    <!-- Enter Username -->
+    <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="container enter-username">  
+      <div class="align-middle">
+          <form class="container text-center" id="username-form">
+              <label for="username">Enter Username:</label>
+              <input type="text" name="username" value="">
+              <button type="submit" value="Submit">Submit</button>
+          </form>
+      </div>
+  </div>
+
+
+    <!-- Jumbotron Header -->
+    <header class="header my-4 text-center">
+      <div id="just-signed-in" style="display: none">
+              <h2 class="display-3">A Warm Welcome To Name 'Em!</h2>
+              <p class="lead font-weight-light">Choose a Category to get started with a New Game.</p>
+              <p class="lead font-weight-light">Or click on the navigation bar to see your previous scores or the current Leaderboard.</p>
+        <div class="select-game-category">
+        <div class="row">
+            <p class="col-md-3"><button id='real-estate-category-set-up' type="button" class="btn btn-dark">Real Estate</button></p>
+            <p class="col-md-3"><button id='baseball-category-set-up' type="button" class="btn btn-dark">Baseball</button></p>
+            <p class="col-md-3"><button id='music-category-set-up' type="button" class="btn btn-dark">Billboard</button></p>
+            <p class="col-md-3"><button  id='cooking-category-set-up' type="button" class="btn btn-dark">Cooking</button></p>
+        </div>
+       </div>
+      </div>
+    </header>
+
+    <div class="container" id="game-timer-div" style="display: none" ><h1></h1></div>
+
+    <div class="container" id="user-and-leader-data">
+      <div id='complete-leader-board' style="display:none;">
+        </div>
+          <!-- If user picks to see his/her saved game results -->
+      <div id='user-game-archives' style="display:none;">
+      </div>
+      <div id='user-info-show' style="display:none;">
+      </div>
+
+    </div>
+
+
+    <div id="submit-game-container">
+
+
+            <!-- Game Couplets Real Estate -->
+            <div class="row text-center align-middle">
+              <div id="real-estate-game-description" class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <img class="card-img-top" src="assets/stockholm.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Name That Price!</h4>
+                    <p class="card-text">Specify game type: properties for sale or for rent, and the price range that your estimates must meet.</p>
+                    <p class="card-text">Also specify the town, city, and zipcode, then click submit.</p>
+                    <p class="card-text">Up to twenty properties will appear. See how many prices you can name.</p>
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div id="select-real-estate-game" class="col-lg-3 col-md-6 mb-4">
+                <div class="container-fluid">
+                  <!-- <img class="card-img-top" src="assets/stockholm.jpg" alt=""> -->
+                  <div class="card-body">
+                    <div>
+                      <form id="real-estate-api-setup" name="real-estate-search">
+                          <label for="real-estate-choice">Choose Your Real Estate Game:</label>
+                          <select name="real-estate-choice">
+                              <option value="for-sale-50000" default>Properties for Sale: Estimates within $50,000</option>
+                              <option value="for-sale-100000">Properties for Sale: Estimates within $100,000</option>
+                              <option value="for-sale-250000">Properties for Sale: Estimates within $250,000</option>
+                              <option value="for-sale-1000000">Properties for Sale: Estimates within $1,000,000</option>
+                              <option value="for-rent-100">Rental Properties: Estimates within $250</option>
+                              <option value="for-rent-250">Rental Properties: Estimates within $250</option>
+                              <option value="for-rent-500">Rental Properties: Estimates within $500</option>
+                              <option value="for-rent-1000">Rental Properties: Estimates within $1000</option>
+                              <option value="for-rent-5000">Rental Properties: Estimates within $5000</option>
+                          </select>
+                          <label for="real-estate-city">Location:</label>
+                          <input type="text" name="real-estate-city" value="" placeholder="Town/City/Village">
+                          <label for="real-estate-state">State:</label>
+                          <select name="real-estate-state">
+                              <option value="AL" default>Alabama</option>
+                              <option value="AK">Alaska</option>
+                              <option value="AZ">Arizona</option>
+                              <option value="AR">Arkansas</option>
+                              <option value="CA">California</option>
+                              <option value="CO">Colorado</option>
+                              <option value="CT">Connecticut</option>
+                              <option value="DC">District of Columbia</option>
+                              <option value="DE">Delaware</option>
+                              <option value="FL">Florida</option>
+                              <option value="GA">Georgia</option>
+                              <option value="HI">Hawaii</option>
+                              <option value="ID">Idaho</option>
+                              <option value="IL">Illinois</option>
+                              <option value="IN">Indiana</option>
+                              <option value="IA">Iowa</option>
+                              <option value="KS">Kansas</option>
+                              <option value="KY">Kentucky</option>
+                              <option value="LA">Louisiana</option>
+                              <option value="ME">Maine</option>
+                              <option value="MD">Maryland</option>
+                              <option value="MA">Massachusetts</option>
+                              <option value="MI">Michigan</option>
+                              <option value="MN">Minnesota</option>
+                              <option value="MS">Mississippi</option>
+                              <option value="MI">Missouri</option>
+                              <option value="MT">Montana</option>
+                              <option value="NE">Nebraska</option>
+                              <option value="NV">Nevada</option>
+                              <option value="NH">New Hampshire</option>
+                              <option value="NJ">New Jersey</option>
+                              <option value="NM">New Mexico</option>
+                              <option value="NY">New York</option>
+                              <option value="NC">North Carolina</option>
+                              <option value="ND">North Dakota</option>
+                              <option value="OH">Ohio</option>
+                              <option value="OK">Oklahoma</option>
+                              <option value="OR">Oregon</option>
+                              <option value="PA">Pennsylvania</option>
+                              <option value="RI">Rhode Island</option>
+                              <option value="SC">South Carolina</option>
+                              <option value="SD">South Dakota</option>
+                              <option value="TN">Tennessee</option>
+                              <option value="TX">Texas</option>
+                              <option value="UT">Utah</option>
+                              <option value="VT">Vermont</option>
+                              <option value="VA">Virginia</option>
+                              <option value="WA">Washington</option>
+                              <option value="WV">West Virginia</option>
+                              <option value="WI">Wisconsin</option>
+                              <option value="WY">Wyoming</option>
+                          </select>
+                          <label for="real-estate-zip-code">Zip Code:</label>
+                          <input type="number" name="real-estate-zip-code" value="" placeholder="5 digit Zip Code">
+
+                          <label for="real-estate-difficulty">Time Difficulty:</label>
+                            <select name="real-estate-difficulty">
+                                <option value="Easy">Easy</option>
+                                <option value="Medium" default>Medium</option>
+                                <option value="Hard">Hard</option>
+                                <option value="Impossible">Impossible</option>
+                            </select>
+                          <button type="submit" value="Submit">Start Game</button>
+                      </form>
+                          <br>
+                          <br>
+                          <button id="category-return-from-real-estate" type="button">Pick a Different Category</button>
+                  </div>  
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4" id="real-estate-game-container" style="display: none;"></div>
+              <div class="col-lg-3 col-md-6 mb-4" id="real-estate-show"  style="display: none;"></div>
+            </div>
+
+            <!-- Game Couplets Baseball -->
+            <div class="row text-center align-middle">
+              <div id="baseball-game-rules" class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <img class="card-img-top" src="assets/stockbaseball.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Name Those Players!</h4>
+                    <p class="card-text">Specify a team and a year, then click submit.</p>
+                    <p class="card-text">Try to name every player on that team's active roster for that year.</p>
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div id="select-baseball-game" class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <!-- <img class="card-img-top" src="assets/stockbaseball.jpg" alt=""> -->
+                  <div class="card-body">
+                    <div>
+                      <form id="baseball-api-setup">
+                          <label for="baseball-team-choice">Choose Team:</label>
+                          <select name="baseball-team-choice">
+                              <option value="108-Angels" default>Angels</option>
+                              <option value="117-Astros">Astros</option>
+                              <option value="133-Athletics">Athletics</option>
+                              <option value="141-Blue-Jays">Blue Jays</option>
+                              <option value="144-Braves">Braves</option>
+                              <option value="158-Brewers">Brewers</option>
+                              <option value="138-Cardinals">Cardinals</option>
+                              <option value="112-Cubs">Cubs</option>
+                              <option value="109-Diamondbacks">Diamondbacks</option>
+                              <option value="119-Dodgers">Dodgers</option>
+                              <option value="137-Giants">Giants</option>
+                              <option value="114-Indians">Indians</option>
+                              <option value="136-Mariners">Mariners</option>
+                              <option value="146-Marlins">Marlins</option>
+                              <option value="121-Mets">Mets</option>
+                              <option value="120-Nationals">Nationals</option>
+                              <option value="110-Orioles">Orioles</option>
+                              <option value="135-Padres">Padres</option>
+                              <option value="143-Phillies">Phillies</option>
+                              <option value="134-Pirates">Pirates</option>
+                              <option value="140-Rangers">Rangers</option>
+                              <option value="139-Rays">Rays</option>
+                              <option value="113-Reds">Reds</option>
+                              <option value="111-Red-Sox">Red Sox</option>
+                              <option value="115-Rockies">Rockies</option>
+                              <option value="118-Royals">Royals</option>
+                              <option value="116-Tigers">Tigers</option>
+                              <option value="142-Twins">Twins</option>
+                              <option value="145-White-Sox">White Sox</option>
+                              <option value="147-Yankees">Yankees</option>
+                          </select>
+                          <label for="baseball-year-choice">Choose Year:</label>
+                          <select name="baseball-year-choice">
+                              <option value="2019" default>2019</option>
+                              <option value="2018">2018</option>
+                              <option value="2017">2017</option>
+                              <option value="2016">2016</option>
+                              <option value="2015">2015</option>
+                              <option value="2014">2014</option>
+                              <option value="2013">2013</option>
+                              <option value="2012">2012</option>
+                              <option value="2011">2011</option>
+                              <option value="2010">2010</option>
+                          </select>
+                          <label for="baseball-difficulty">Difficulty:</label>
+                              <select name="baseball-difficulty">
+                              <option value="Easy">Easy</option>
+                              <option value="Medium" default>Medium</option>
+                              <option value="Hard">Hard</option>
+                              <option value="Impossible">Impossible</option>
+                              </select>
+                          <button type= "submit" value="Submit">Submit</button>
+                      </form>
+                      <br>
+                      <br>
+                      <button id="category-return-from-baseball" type="button">Pick a Different Category</button>
+                  </div>
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mb-4" id="baseball-game-container" style="display: none;"></div>
+            </div>
+
+            <!-- Game Couplets Music -->
+            <div class="row text-center align-middle">
+              <div id="music-game-description" class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <img class="card-img-top" src="assets/bb3.png" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Name That Song!</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div id="select-music-game" class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <!-- <img class="card-img-top" src="assets/bb3.png" alt=""> -->
+                  <div class="card-body">
+                    <h4 class="card-title">Choose A Year!</h4>
+                    <form id="music-api-setup">
+                      <label for="music-year-choice">Choose Year:</label>
+                      <select name="music-year-choice">
+                          <option value="2019" default>2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                          <option value="2015">2015</option>
+                          <option value="2014">2014</option>
+                          <option value="2013">2013</option>
+                          <option value="2012">2012</option>
+                          <option value="2011">2011</option>
+                          <option value="2010">2010</option>
+                      </select>
+                      <label for="music-difficulty">Difficulty:</label>
+                      <select name="music-difficulty">
+                          <option value="Easy">Easy</option>
+                          <option value="Medium" default>Medium</option>
+                          <option value="Hard">Hard</option>
+                          <option value="Impossible">Impossible</option>
+                      </select>
+                      <button type= "submit" value="Submit">Submit</button>
+                  </form>
+                  <br>
+                      <br>
+                      <button id="category-return-from-music" type="button">Pick a Different Category</button>     
+                      <!-- Need to add into JS^^^ -->
+                  </div>
+                  <!-- <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Game Start</a>
+                  </div> -->
+                </div>
+              </div>
+              <div id="music-game-container" class="col-lg-3 col-md-6 mb-4" style="display: none;"></div>
+              <div class="col-lg-3 col-md-6 mb-4" id="song-game-show" style="display: none;"></div>
+            </div>
+
+            <!-- Game Couplets Cooking -->
+            <div class="row text-center align-middle">
+                  <div id="cooking-game-description" class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <img class="card-img-top" src="assets/cooking.jpg" alt="">
+                      <div class="card-body">
+                        <h4 class="card-title">Name That Dish!</h4>
+                        <p class="card-text">Specify any meal or dietary restrictions, then click submit.</p>
+                        <p class="card-text">Six recipes will appear. See how many ingredients you can name for each recipe.</p>
+                      </div>
+                      <!-- <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Game Start</a>
+                      </div> -->
+                    </div>
+                  </div>
+                  <div id="select-cooking-game" class="col-lg-3 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <!-- <img class="card-img-top" src="assets/cooking.jpg" alt=""> -->
+                      <div class="card-body">
+                        <div>
+                          <form id="recipe-api-setup">
+                              <label for="meal-type-dropdown">Choose Meal Type:</label>
+                              <select name="meal-type-dropdown">
+                                  <option value="no+meal+type" default>No Meal Type Specified</option>
+                                  <option value="main+course">Main Course</option>
+                                  <option value="side+dish">Side Dish</option>
+                                  <option value="dessert">Dessert</option>
+                                  <option value="appetizer">Appetizer</option>
+                                  <option value="salad">Salad</option>
+                                  <option value="bread">Bread</option>
+                                  <option value="breakfast">Breakfast</option>
+                                  <option value="soup">Soup</option>
+                                  <option value="beverage">Beverage</option>
+                                  <option value="sauce">Sauce</option>
+                                  <option value="marinade">Marinade</option>
+                                  <option value="fingerfood">Fingerfood</option>
+                                  <option value="snack">Snack</option>
+                                  <option value="drink">Drink</option>
+                              </select>
+                              <label for="dietary-restrictions-one-dropdown">Choose Dietary Restriction:</label>
+                              <select name="dietary-restrictions-one-dropdown">
+                                  <option value="no+dietary+restrictions" default>No Dietary Restrictions</option>
+                                  <option value="vegetarian">Vegetarian</option>
+                                  <option value="vegan">Vegan</option>
+                                  <option value="lacto+ovo+vegetarian">Lacto Ovo Vegetarian</option>
+                                  <option value="dairy+free">Dairy Free</option>
+                                  <option value="gluten+free">Gluten Free</option>
+                                  <option value="pescatarian">Pescatarian</option>
+                                  <option value="paleolithic">Paleolithic</option>
+                                  <option value="primal">Primal</option>
+                              </select>
+                              <label for="dietary-restrictions-two-dropdown">Choose Second Dietary Restriction:</label>
+                              <select name="dietary-restrictions-two-dropdown">
+                                  <option value="no+dietary+restrictions" default>No Second Restriction</option>
+                                  <option value="vegetarian">Vegetarian</option>
+                                  <option value="vegan">Vegan</option>
+                                  <option value="lacto+ovo+vegetarian">Lacto Ovo Vegetarian</option>
+                                  <option value="dairy+free">Dairy Free</option>
+                                  <option value="gluten+free">Gluten Free</option>
+                                  <option value="pescatarian">Pescatarian</option>
+                                  <option value="paleolithic">Paleolithic</option>
+                                  <option value="primal">Primal</option>
+                              </select>
+                              <label for="cooking-difficulty">Difficulty:</label>
+                                  <select name="cooking-difficulty">
+                                      <option value="Easy">Easy</option>
+                                      <option value="Medium" default>Medium</option>
+                                      <option value="Hard">Hard</option>
+                                      <option value="Impossible">Impossible</option>
+                                  </select>
+                              <button type= "submit" value="Submit">Submit</button>
+                          </form>
+                          <br>
+                          <br>
+                          <button id="category-return-from-cooking" type="button">Pick a Different Category</button>
+                      </div>
+                      </div>
+                      <!-- <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Game Start</a>
+                      </div> -->
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 mb-4" id="cooking-game-container" style="display: none;"></div>
+          </div>
+    </div>
+
+
+    
+
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Flatiron &copy; Send Nick and Grant to Mod 4</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="src/script.js"></script>
+
+</body>
+
+</html>
