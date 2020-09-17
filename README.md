@@ -6,7 +6,7 @@
 
 # Name'Em
 ---
-Name'Em is a react application that plays Sporcle like games.
+Name'Em is a react application that plays Sporcle like triva-based games.
 Games include:
 1. Pick a Major League Baseball Team and a Year from 2010-2019. Name as many baseball players as you can on the active roster for that year.
 2. Pick a Year from 2010-2019. Name as many Billboard Top 20 Artists from that year, matching the Artist to their Song's title.
@@ -27,15 +27,9 @@ If the range is greater than 2 times the average price, the score will be 1/3rd 
 If the range is greater than 3 times the average price, the score will be 50% the original score.
 If the range is greater than 4 times the average price, the score will be 2/3rds the original score.
  
-
-1. Explanation of terminology commonly found in insurance policies
-2. Prescription drug library that also includes generic options (if they exists) as well as alternative treatment options (if they exists)
-3. Health Insurance News
-4. Covid19 Global & Country specific data 
-5. External resources that will take you to:
-  1. Covid19 Data Tracker
-  2. Healthcare blog run by a close friend
-  3. Healthcare blog meant to bring humor into the equation, because healthcare is laughably confusing
+Leaderboard:
+All scores will be saved in the Leaderboard for each individual game.
+Users can also see their individual scores and possess the option to delete any scores from the database.
 
 
 ## To Start
