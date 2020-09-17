@@ -7,7 +7,26 @@
 # Name'Em
 ---
 Name'Em is a react application that plays Sporcle like games.
-assists users in navigating certain aspects of the health insurance landscape. You'll find resources that do the following: 
+Games include:
+1. Pick a Major League Baseball Team and a Year from 2010-2019. Name as many baseball players as you can on the active roster for that year.
+2. Pick a Year from 2010-2019. Name as many Billboard Top 20 Artists from that year, matching the Artist to their Song's title.
+3. Enter Optional Dietary Restrictions and Meal Type. 6 Recipes will appear with photos. Name as many ingredients in each recipe.
+4. Enter a city/town, state, and zip code. Pick whether you are looking at rental or for sale properties as well as the range within which your guesses must hit to be correct. Name as many prices of real estate properties in the location you entered.
+
+Scoring:
+Time Based:
+1. Easy: 15 Minutes. Game score is the percentage you correctly enter out of the total available entries.
+2. Medium: 6 Minutes. Game score is 1.4 times the percentage you correctly enter out of the total available entries.
+3. Hard: 3 Minutes. Game score is 2 times the percentage you correctly enter out of the total available entries.
+4. Impossible: 30 Seconds. Game score is 6 times the percentage you correctly enter out of the total available entries.
+
+Real Estate Scoring:
+Real Estate scores will be lowered if as the range of the margin of error represents a greater proportion of the average price of houses.
+If the range is greater than the average price, the score will be 10% the original score.
+If the range is greater than 2 times the average price, the score will be 1/3rd the original score.
+If the range is greater than 3 times the average price, the score will be 50% the original score.
+If the range is greater than 4 times the average price, the score will be 2/3rds the original score.
+ 
 
 1. Explanation of terminology commonly found in insurance policies
 2. Prescription drug library that also includes generic options (if they exists) as well as alternative treatment options (if they exists)
