@@ -32,7 +32,7 @@ Please follow the steps below to ensure the API's are on the proper ports.
 
 
 First, start the rails API:
-(Link to Backend Repo: https://github.com/steveneross94/ScriptBaseBackend)
+
 1. `cd `
 2. `bundle`
 3. `rails db:migrate`
