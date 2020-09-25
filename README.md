@@ -32,15 +32,15 @@ Please follow the steps below to ensure the API's are on the proper ports.
 
 
 First, start the rails API:
-
-1. `cd `
+Fork the link for the backend: https://github.com/grantkoji/NameEm-backend
+1. `cd NameEm-backend`
 2. `bundle`
 3. `rails db:migrate`
 4. `rails db:seed`
 5. `rails s`
 
 Next, follow these steps before running npm start
-1. `cd ScriptBase/script-base` 
+1. `cd NameEm-client` 
 2. `npm start`
   - you will be asked if you want to start on a different port, select yes
 
