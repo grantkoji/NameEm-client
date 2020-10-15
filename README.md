@@ -15,11 +15,11 @@ Time Based:
 4. Impossible: 30 Seconds. Game score is 6 times the percentage you correctly enter out of the total available entries.
 
 Real Estate Scoring:
-Real Estate scores will be lowered if as the range of the margin of error represents a greater proportion of the average price of houses.
-If the range is greater than the average price, the score will be 10% the original score.
-If the range is greater than 2 times the average price, the score will be 1/3rd the original score.
-If the range is greater than 3 times the average price, the score will be 50% the original score.
-If the range is greater than 4 times the average price, the score will be 2/3rds the original score.
+Real Estate scores will decrease the original score as the range of the margin of error represents a greater proportion of the average price of houses.
+If the range is greater than the average price, the score will be 10% of the original score.
+If the range is greater than 2 times the average price, the score will be 1/3rd of the original score.
+If the range is greater than 3 times the average price, the score will be 50% of the original score.
+If the range is greater than 4 times the average price, the score will be 2/3rds of the original score.
  
 Leaderboard:
 All scores will be saved in the Leaderboard for each individual game.
@@ -42,7 +42,7 @@ Fork the link for the backend: https://github.com/grantkoji/NameEm-backend
 Next, follow these steps before running npm start
 1. `cd NameEm-client` 
 2. `npm start`
-  - you will be asked if you want to start on a different port, select yes
+  - You will be asked if you want to start on a different port, select yes
 
 ### External Resources for Access
 ---
