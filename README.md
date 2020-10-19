@@ -5,7 +5,9 @@ Games include:
 1. Pick a Major League Baseball Team and a Year from 2010-2019. Name as many baseball players as you can on the active roster for that year.
 2. Pick a Year from 2010-2019. Name as many Billboard Top 20 Artists from that year, matching the Artist to their Song's title.
 3. Enter Optional Dietary Restrictions and Meal Type. 6 Recipes will appear with photos. Name as many ingredients in each recipe.
-4. Enter a city/town, state, and zip code. Pick whether you are looking at rental or for sale properties as well as the range within which your guesses must hit to be correct. Name as many prices of real estate properties in the location you entered.
+4. Enter a city/town, state, and zip code. Pick whether you are looking at rental or for sale properties as well as the range within which your guesses must hit to be correct. Name as many prices of real estate properties in the location you entered. 
+
+
 
 Scoring:
 Time Based:
