@@ -1,6 +1,7 @@
 # Name'Em
 ---
 Name'Em is a react application that plays Sporcle like triva-based games.
+
 Here is a link to a video demo: https://www.youtube.com/watch?v=gODiGWHAZwk
 
 Games include:
